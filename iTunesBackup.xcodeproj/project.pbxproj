@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		341A5B2F253828F300914BE3 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 341A5B2E253828F300914BE3 /* res */; };
 		342EDAF825236A63006A295A /* BackupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 342EDAF725236A63006A295A /* BackupItem.m */; };
 		342EDB00252450EB006A295A /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 342EDAFF252450EB006A295A /* libcurl.tbd */; };
 		342EDB0925247852006A295A /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 342EDB0825247852006A295A /* Utils.cpp */; };
@@ -194,7 +193,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341A5B2F253828F300914BE3 /* res in Resources */,
 				3449A611277C432300320BEF /* Localizable.strings in Resources */,
 				343F611C252322D600FFE085 /* Assets.xcassets in Resources */,
 				343F611F252322D600FFE085 /* Main.storyboard in Resources */,
