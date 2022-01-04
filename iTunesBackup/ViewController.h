@@ -11,6 +11,7 @@
 @interface ViewController : NSViewController
 
 @property (weak) IBOutlet NSButton *btnExport;
+@property (weak) IBOutlet NSButton *btnExportWechat;
 @property (weak) IBOutlet NSTextField *txtboxOutput;
 @property (weak) IBOutlet NSButton *btnToggleAll;
 @property (weak) IBOutlet NSPopUpButton *popupBackup;

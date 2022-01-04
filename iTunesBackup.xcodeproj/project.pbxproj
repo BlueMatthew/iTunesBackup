@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		342EDAF825236A63006A295A /* BackupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 342EDAF725236A63006A295A /* BackupItem.m */; };
-		342EDB00252450EB006A295A /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 342EDAFF252450EB006A295A /* libcurl.tbd */; };
 		342EDB0925247852006A295A /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 342EDB0825247852006A295A /* Utils.cpp */; };
-		342EDB0B252495BD006A295A /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 342EDB0A252495BD006A295A /* libxml2.tbd */; };
 		343F6117252322D500FFE085 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 343F6116252322D500FFE085 /* AppDelegate.m */; };
 		343F611A252322D500FFE085 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 343F6119252322D500FFE085 /* ViewController.mm */; };
 		343F611C252322D600FFE085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343F611B252322D600FFE085 /* Assets.xcassets */; };
@@ -21,11 +19,27 @@
 		3449A611277C432300320BEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3449A613277C432300320BEF /* Localizable.strings */; };
 		346A56F3273C158E00327CBD /* FileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346A56F1273C158D00327CBD /* FileSystem.cpp */; };
 		34B74E5E277B09CD00095517 /* AppDataSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34B74E5C277B09CD00095517 /* AppDataSource.mm */; };
+		34C0E1C0277F2E8A00CD4ADE /* libplist-2.0.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0E1BF277F2E8A00CD4ADE /* libplist-2.0.3.dylib */; };
+		34C0E1C1277F2E8A00CD4ADE /* libplist-2.0.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 34C0E1BF277F2E8A00CD4ADE /* libplist-2.0.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		34C0E1C3277F30F500CD4ADE /* libplist-2.0.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0E1BF277F2E8A00CD4ADE /* libplist-2.0.3.dylib */; };
 		34E3E90A2531BD8E0093042D /* Utils_md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E3E9092531BD8E0093042D /* Utils_md5.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		34C0E1C2277F2E8A00CD4ADE /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				34C0E1C1277F2E8A00CD4ADE /* libplist-2.0.3.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		341A5B2E253828F300914BE3 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		342EDAF725236A63006A295A /* BackupItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackupItem.m; sourceTree = "<group>"; };
 		342EDAF925236A7C006A295A /* BackupItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackupItem.h; sourceTree = "<group>"; };
 		342EDAFE2524485C006A295A /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -53,6 +67,8 @@
 		347A145126897C7F00E794ED /* MbdbReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MbdbReader.h; sourceTree = "<group>"; };
 		34B74E5C277B09CD00095517 /* AppDataSource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataSource.mm; sourceTree = "<group>"; };
 		34B74E5D277B09CD00095517 /* AppDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDataSource.h; sourceTree = "<group>"; };
+		34C0E1BF277F2E8A00CD4ADE /* libplist-2.0.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libplist-2.0.3.dylib"; path = "build/windows-libs/x64/rel/bin/libplist-2.0.3.dylib"; sourceTree = "<group>"; };
+		34C0E1C4277F312500CD4ADE /* libplist-2.0.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libplist-2.0.3.dylib"; path = "build/windows-libs/x64/rel/bin/libplist-2.0.3.dylib"; sourceTree = "<group>"; };
 		34E3E9092531BD8E0093042D /* Utils_md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils_md5.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				342EDB00252450EB006A295A /* libcurl.tbd in Frameworks */,
 				343F613025234BFC00FFE085 /* libsqlite3.tbd in Frameworks */,
-				342EDB0B252495BD006A295A /* libxml2.tbd in Frameworks */,
+				34C0E1C0277F2E8A00CD4ADE /* libplist-2.0.3.dylib in Frameworks */,
+				34C0E1C3277F30F500CD4ADE /* libplist-2.0.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +89,7 @@
 		343F6109252322D500FFE085 = {
 			isa = PBXGroup;
 			children = (
+				34C0E1C4277F312500CD4ADE /* libplist-2.0.3.dylib */,
 				343F6114252322D500FFE085 /* iTunesBackup */,
 				343F6113252322D500FFE085 /* Products */,
 				343F612E25234BFC00FFE085 /* Frameworks */,
@@ -101,7 +118,6 @@
 				343F6120252322D600FFE085 /* Info.plist */,
 				343F6121252322D600FFE085 /* main.m */,
 				343F611D252322D600FFE085 /* Main.storyboard */,
-				341A5B2E253828F300914BE3 /* res */,
 				343F6118252322D500FFE085 /* ViewController.h */,
 				343F6119252322D500FFE085 /* ViewController.mm */,
 				343F6123252322D600FFE085 /* ITunesBackup.entitlements */,
@@ -128,6 +144,7 @@
 		343F612E25234BFC00FFE085 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34C0E1BF277F2E8A00CD4ADE /* libplist-2.0.3.dylib */,
 				342EDB0A252495BD006A295A /* libxml2.tbd */,
 				342EDAFF252450EB006A295A /* libcurl.tbd */,
 				343F612F25234BFC00FFE085 /* libsqlite3.tbd */,
@@ -145,6 +162,7 @@
 				343F610E252322D500FFE085 /* Sources */,
 				343F610F252322D500FFE085 /* Frameworks */,
 				343F6110252322D500FFE085 /* Resources */,
+				34C0E1C2277F2E8A00CD4ADE /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -370,6 +388,7 @@
 				DEVELOPMENT_TEAM = L848BW5698;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = (
+					"./build/windows-libs/include",
 					/usr/local/include/,
 					"${SDKROOT}/usr/include/libxml2/",
 				);
@@ -378,10 +397,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-L/usr/local/lib",
-					"-lplist-2.0",
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/windows-libs/x64/rel/bin",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wakin.iTunesBackup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -398,6 +418,7 @@
 				DEVELOPMENT_TEAM = L848BW5698;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = (
+					"./build/windows-libs/include",
 					/usr/local/include/,
 					"${SDKROOT}/usr/include/libxml2/",
 				);
@@ -406,10 +427,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-L/usr/local/lib",
-					"-lplist-2.0",
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/windows-libs/x64/rel/bin",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wakin.iTunesBackup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

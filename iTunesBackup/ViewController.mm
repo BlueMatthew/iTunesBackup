@@ -108,6 +108,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     // self.btnCancel.autoresizingMask = NSViewMinXMargin | NSViewMaxYMargin;
     // self.btnQuit.autoresizingMask = NSViewMinXMargin | NSViewMaxYMargin;
     self.btnExport.autoresizingMask = NSViewMinXMargin | NSViewMaxYMargin;
+    self.btnExportWechat.autoresizingMask = NSViewMinXMargin | NSViewMaxYMargin;
     
     // sqlite3_config(SQLITE_CONFIG_LOG, errorLogCallback, NULL);
 
@@ -118,6 +119,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     [self.btnBackup setAction:@selector(btnBackupClicked:)];
     [self.btnOutput setAction:@selector(btnOutputClicked:)];
     [self.btnExport setAction:@selector(btnExportClicked:)];
+    [self.btnExportWechat setAction:@selector(btnExportClicked:)];
     
     [self.popupBackup setTarget:self];
     [self.popupBackup setAction:@selector(handlePopupButton:)];
@@ -148,6 +150,8 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
             [self updateBackups:manifests];
         }
     }
+    
+    self.txtboxOutput.stringValue = [ViewController getLastOrDefaultOutputDir];
     
     NSRect frame = [self.tblApps.headerView headerRectOfColumn:0];
     NSRect btnFrame = self.btnToggleAll.frame;
@@ -184,6 +188,17 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     */
     
 #endif
+}
+
++ (NSString *)getLastOrDefaultOutputDir
+{
+    NSString *outputDir = [[NSUserDefaults standardUserDefaults] stringForKey:@"OutputDir"];
+    if (nil != outputDir && outputDir.length > 0)
+    {
+        return outputDir;
+    }
+
+    return [self getDefaultOutputDir];
 }
 
 + (NSString *)getDefaultOutputDir
@@ -323,7 +338,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     panel.canChooseFiles = NO;
     panel.canChooseDirectories = YES;
     panel.allowsMultipleSelection = NO;
-    panel.canCreateDirectories = NO;
+    panel.canCreateDirectories = YES;
     panel.showsHiddenFiles = YES;
     
     NSString *outputPath = self.txtboxOutput.stringValue;
@@ -340,6 +355,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
         if (result == NSOKButton)
         {
             NSURL *url = panel.directoryURL;
+            [ViewController setLastOutputDir:url.path];
             
             self.txtboxOutput.stringValue = url.path;
         }
@@ -377,8 +393,16 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
         // self.txtboxOutput focus
         return;
     }
-    NSMutableArray<NSString *> *domains = [NSMutableArray<NSString *> array];
-    [m_dataSource getSelectedApps:domains];
+    __block NSMutableArray<NSString *> *domains = [NSMutableArray<NSString *> array];
+    if (sender == self.btnExport)
+    {
+        [m_dataSource getSelectedApps:domains];
+    }
+    else
+    {
+        [domains addObject:@"AppDomain-com.tencent.xin"];
+        [domains addObject:@"AppDomainGroup-group.com.tencent.xin"];
+    }
     
     if (domains.count == 0)
     {
@@ -399,7 +423,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     });
 }
 
-- (void)exportBackup:(NSString *)backupPath withApps:(NSArray<NSString *> *)domains toOutput:(NSString *)outputPath
+- (void)exportBackup:(NSString *)backupPath withApps:(__kindof NSArray<NSString *> *)domains toOutput:(NSString *)outputPath
 {
     std::string output([outputPath UTF8String]);
     std::string backup([backupPath UTF8String]);
@@ -409,10 +433,10 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
         std::string domainOutput = combinePath(output, [domain UTF8String]);
         makeDirectory(domainOutput);
         
-        ITunesDb* iTunesDb = new ITunesDb(domainOutput, "Manifest.db");
+        ITunesDb* iTunesDb = new ITunesDb(backup, "Manifest.db");
         if (iTunesDb->load([domain UTF8String]))
         {
-            iTunesDb->enumFiles(std::bind(&handleFile, std::cref(output), std::placeholders::_1, std::placeholders::_2));
+            iTunesDb->enumFiles(std::bind(&handleFile, std::cref(domainOutput), std::placeholders::_1, std::placeholders::_2));
         }
         delete iTunesDb;
     }
@@ -441,6 +465,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
 {
     self.view.window.styleMask |= NSClosableWindowMask;
     [self.btnExport setEnabled:YES];
+    [self.btnExportWechat setEnabled:YES];
     // [self.btnCancel setEnabled:NO];
     [self.popupBackup setEnabled:YES];
     [self.btnOutput setEnabled:YES];
@@ -455,6 +480,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     [self.btnOutput setEnabled:NO];
     [self.btnBackup setEnabled:NO];
     [self.btnExport setEnabled:NO];
+    [self.btnExportWechat setEnabled:NO];
     // [self.btnCancel setEnabled:YES];
     [self.progressBar startAnimation:nil];
 }
@@ -544,5 +570,9 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     }
 }
 
++ (void)setLastOutputDir:(NSString *)outputDir
+{
+    [[NSUserDefaults standardUserDefaults] setObject:outputDir forKey:@"OutputDir"];
+}
 
 @end

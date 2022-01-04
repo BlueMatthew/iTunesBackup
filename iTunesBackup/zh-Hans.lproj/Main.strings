@@ -36,7 +36,7 @@
 "4J7-dP-txa.title" = "Enter Full Screen";
 
 /* Class = "NSMenuItem"; title = "Quit iTunesBackup"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit iTunesBackup";
+"4sb-4s-VLi.title" = "退出iTunesBackup";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "5QF-Oa-p0T"; */
 "5QF-Oa-p0T.title" = "Edit";
@@ -45,7 +45,7 @@
 "5Vv-lz-BsD.title" = "Copy Style";
 
 /* Class = "NSMenuItem"; title = "About iTunesBackup"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About iTunesBackup";
+"5kV-Vb-QxS.title" = "关于iTunes Backup";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "6dh-zS-Vam"; */
 "6dh-zS-Vam.title" = "Redo";
@@ -72,7 +72,7 @@
 "BgM-ve-c93.title" = "\tLeft to Right";
 
 /* Class = "NSTextFieldCell"; title = "iTunes Backup Directory:"; ObjectID = "BqF-Du-vMt"; */
-"BqF-Du-vMt.title" = "iTunes Backup Directory:";
+"BqF-Du-vMt.title" = "iTunes备份目录：";
 
 /* Class = "NSMenuItem"; title = "Save As…"; ObjectID = "Bw7-FT-i3A"; */
 "Bw7-FT-i3A.title" = "Save As…";
@@ -87,7 +87,7 @@
 "F2S-fz-NVQ.title" = "Help";
 
 /* Class = "NSMenuItem"; title = "iTunesBackup Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "iTunesBackup Help";
+"FKE-Sm-Kum.title" = "iTunes Backup帮助";
 
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "FNy-X3-flL"; */
 "FNy-X3-flL.title" = "Table View Cell";
@@ -195,7 +195,7 @@
 "RB4-Sm-HuC.title" = "\tRight to Left";
 
 /* Class = "NSTextFieldCell"; title = "Apps:"; ObjectID = "RYi-Cs-WJ3"; */
-"RYi-Cs-WJ3.title" = "Apps:";
+"RYi-Cs-WJ3.title" = "应用：";
 
 /* Class = "NSMenuItem"; title = "Superscript"; ObjectID = "Rqc-34-cIF"; */
 "Rqc-34-cIF.title" = "Superscript";
@@ -279,7 +279,7 @@
 "bgn-CT-cEk.title" = "Show Colors";
 
 /* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
-"bib-Uj-vzu.title" = "File";
+"bib-Uj-vzu.title" = "文件";
 
 /* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "buJ-ug-pKt"; */
 "buJ-ug-pKt.title" = "Use Selection for Find";
@@ -399,7 +399,7 @@
 "uRl-iY-unG.title" = "Cut";
 
 /* Class = "NSTextFieldCell"; title = "Export Directory:"; ObjectID = "uh4-ix-NCq"; */
-"uh4-ix-NCq.title" = "Export Directory:";
+"uh4-ix-NCq.title" = "导出目录：";
 
 /* Class = "NSMenuItem"; title = "Paste Style"; ObjectID = "vKC-jM-MkH"; */
 "vKC-jM-MkH.title" = "Paste Style";
@@ -416,8 +416,11 @@
 /* Class = "NSMenu"; title = "Ligatures"; ObjectID = "w0m-vy-SC9"; */
 "w0m-vy-SC9.title" = "Ligatures";
 
+/* Class = "NSButtonCell"; title = "Export WeChat"; ObjectID = "6tb-Oo-ZuZ"; */
+"6tb-Oo-ZuZ.title" = "导出微信";
+
 /* Class = "NSButtonCell"; title = "Export"; ObjectID = "wX7-rb-1cu"; */
-"wX7-rb-1cu.title" = "Export";
+"wX7-rb-1cu.title" = "导出";
 
 /* Class = "NSMenuItem"; title = "Align Right"; ObjectID = "wb2-vD-lq4"; */
 "wb2-vD-lq4.title" = "Align Right";
@@ -426,7 +429,7 @@
 "wpM-wy-5kq.title" = "Item 3";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
-"wpr-3q-Mcd.title" = "Help";
+"wpr-3q-Mcd.title" = "帮助";
 
 /* Class = "NSMenuItem"; title = "Copy"; ObjectID = "x3v-GG-iWU"; */
 "x3v-GG-iWU.title" = "Copy";

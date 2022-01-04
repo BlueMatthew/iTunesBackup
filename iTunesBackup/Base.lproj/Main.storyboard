@@ -689,6 +689,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="1024" y="240" width="1024" height="640"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="1024" height="640"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -733,6 +734,14 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ous-fN-Blb" userLabel="ExportWx">
+                                <rect key="frame" x="416" y="7" width="124" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Export WeChat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6tb-Oo-ZuZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-ig-uay">
                                 <rect key="frame" x="540" y="7" width="96" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -759,7 +768,7 @@
                                 </buttonCell>
                             </button>
                             <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-pK-9Z0">
-                                <rect key="frame" x="10" y="16" width="409" height="20"/>
+                                <rect key="frame" x="10" y="16" width="365" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </progressIndicator>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gl-oS-xn6">
@@ -925,6 +934,7 @@
                     <connections>
                         <outlet property="btnBackup" destination="8gl-oS-xn6" id="ykX-mi-M09"/>
                         <outlet property="btnExport" destination="c7I-ig-uay" id="L8d-sU-cTy"/>
+                        <outlet property="btnExportWechat" destination="Ous-fN-Blb" id="IOd-UL-l8I"/>
                         <outlet property="btnOutput" destination="ybQ-bI-p2r" id="pAc-FC-1zh"/>
                         <outlet property="btnToggleAll" destination="o6b-TX-JpM" id="lmg-vw-Xfu"/>
                         <outlet property="lblApps" destination="HbI-BT-7En" id="CSG-PF-xZn"/>
