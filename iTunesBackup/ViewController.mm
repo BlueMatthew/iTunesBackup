@@ -317,11 +317,12 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     [panel beginSheetModalForWindow:[self.view window] completionHandler: (^(NSInteger result){
         if (result == NSOKButton)
         {
-            NSURL *backupUrl = panel.directoryURL;
+            NSURL *backupUrl = panel.URL;
+            NSString *backupPath = backupUrl.path;
             
-            if ([backupUrl.absoluteString hasSuffix:@"/Backup"] || [backupUrl.absoluteString hasSuffix:@"/Backup/"])
+            if ([backupPath hasSuffix:@"/Backup"] || [backupPath hasSuffix:@"/Backup/"])
             {
-                ManifestParser parser([backupUrl.path UTF8String], true);
+                ManifestParser parser([backupPath UTF8String], true);
                 std::vector<BackupManifest> manifests;
                 if (parser.parse(manifests))
                 {
@@ -354,7 +355,7 @@ static bool handleFile(const std::string& output, const ITunesDb* iTunesDb, ITun
     [panel beginSheetModalForWindow:[self.view window] completionHandler: (^(NSInteger result){
         if (result == NSOKButton)
         {
-            NSURL *url = panel.directoryURL;
+            NSURL *url = panel.URL;
             [ViewController setLastOutputDir:url.path];
             
             self.txtboxOutput.stringValue = url.path;
